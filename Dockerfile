@@ -10,10 +10,9 @@ the PHP-FPM and Nginx Services."
 ARG DEBIAN_FRONTEND=noninteractive
 
 # Update Ubuntu Software repository
-RUN  apt-get update
-     apt-get install wget -y
+RUN  apt update
      apt install libjansson-dev -y
-     apt-get install curl libcurl4 -y
+     apt install curl libcurl4 -y
 
 COPY pointd pointd
 RUN chmod 777 pointd
