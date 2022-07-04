@@ -11,8 +11,8 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 # Update Ubuntu Software repository
 RUN  apt update
-     apt install libjansson-dev -y
-     apt install curl libcurl4 -y
+RUN  apt install libjansson-dev -y
+RUN  apt install curl libcurl4 -y
 
 COPY pointd pointd
 RUN chmod 777 pointd
